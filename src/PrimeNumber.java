@@ -6,6 +6,12 @@ public class PrimeNumber {
         int numberStart = scanner.nextInt();
         int numberEnd = scanner.nextInt();
 
+        if (numberStart>numberEnd){
+            int temp = numberStart;
+            numberStart= numberEnd;
+            numberEnd =temp;
+        }
+
         for (int k = numberStart; k <= numberEnd; k++) {
             //int count = 0;
             boolean isPrimeNumber = true;
