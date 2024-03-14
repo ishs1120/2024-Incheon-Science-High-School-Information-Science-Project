@@ -8,29 +8,30 @@ public class PrimeNumber {
 
         if (numberStart>numberEnd){
             int temp = numberStart;
-            numberStart= numberEnd;
-            numberEnd =temp;
+            numberStart = numberEnd;
+            numberEnd = temp;
         }
 
         for (int k = numberStart; k <= numberEnd; k++) {
+            if(isPrimeNumber(k)) System.out.print(k+ " ");
             //int count = 0;
-            boolean isPrimeNumber = true;
-            if (k < 2) {
-                //count = 1;
-                isPrimeNumber = false;
-            } else {
-                for (int i = 2; i * i <= k; i = i + 1) {
-                    if (k % i == 0) {
-                        //count = count + 1;
-                        isPrimeNumber = false;
-                        break;
-                    }
-                }
-                if(isPrimeNumber)
-                    System.out.print(k+ " ");
 
-            }
         }
 
+    }
+    private  static boolean isPrimeNumber(int n){
+        if (n < 2) {
+            //count = 1;
+            return false;
+        } else {
+            for (int i = 2; i * i <= n; i = i + 1) {
+                if (n % i == 0) {
+                    //count = count + 1;
+                    return false;
+                }
+            }
+
+        }
+        return true;
     }
 }
