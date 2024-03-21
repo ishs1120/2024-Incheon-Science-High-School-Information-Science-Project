@@ -3,8 +3,8 @@ class Pockemon{
     private int hp;
 
     public Pockemon(String name, int hp) {
-        this.name = name;
-        this.hp = hp;
+        name = name;
+        hp = hp;
         System.out.println("parameter construction");
     }
 
@@ -38,5 +38,6 @@ public class PockemonGame {
         p1.setHp(50);
         p1.setName("Pikachu");
         System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
+        System.out.println(p2.getName() + "'s health is " + p2.getHp() + ".");
     }
 }
