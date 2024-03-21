@@ -2,16 +2,21 @@ class Pockemon{
     private String name;
     private int hp;
 
-    public Pockemon(String n, int h) {
+    public Pockemon() {
+        this.name = "nameless";
+        this.hp = 10;
+        System.out.println("default constructor");
+    }
+    public Pockemon(String name, int hp) {
         //name = name;
         //hp = hp;
-        name= n;
-        hp =h;
-        System.out.println("parameter construction");
-    }
 
-    public Pockemon() {
-        System.out.println("default construction");
+        //below code works impairs readability
+        //name= n;
+        //hp =h;
+        this.name = name;
+        this.hp = hp;
+        System.out.println("parameter construction");
     }
 
     public String getName() {
@@ -37,6 +42,7 @@ public class PockemonGame {
 
         Pockemon p1 = new Pockemon();  // default consturctor
         //p1.hp = 50;  // hp has private access in Pokemon
+        System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
         p1.setHp(50);
         p1.setName("Pikachu");
         System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
