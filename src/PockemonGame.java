@@ -2,9 +2,11 @@ class Pockemon{
     private String name;
     private int hp;
 
-    public Pockemon(String name, int hp) {
-        name = name;
-        hp = hp;
+    public Pockemon(String n, int h) {
+        //name = name;
+        //hp = hp;
+        name= n;
+        hp =h;
         System.out.println("parameter construction");
     }
 
