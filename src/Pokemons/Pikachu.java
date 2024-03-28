@@ -4,13 +4,11 @@ public class Pikachu extends Pockemon{
     public Pikachu() {
     }
 
+
+
     public Pikachu(String name, int hp) {
         super(name, hp);
-    }
-
-    public Pikachu(String name, int hp, NoFly noFly) {
-        super(name, hp);
-        super.setFly(noFly);
+        super.setFly(new NoFly());
     }
 
     @Override
