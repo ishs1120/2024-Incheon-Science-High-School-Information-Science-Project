@@ -16,6 +16,11 @@ public class Squirtle extends Pockemon{
 
     @Override
     public void attack() {
-        System.out.println("Water Cannon");
+        System.out.println("Wide Area Water Cannon");
+    }
+
+    @Override
+    public void attack(Pockemon targetPokemon) {
+        System.out.println("Attack " + targetPokemon.getName()+ " with Water Cannon ");
     }
 }

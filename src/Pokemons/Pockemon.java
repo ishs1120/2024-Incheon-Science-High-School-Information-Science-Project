@@ -36,4 +36,7 @@ public abstract class  Pockemon{
     }
 
     public abstract void attack();
+    public abstract void attack(Pockemon targetPokemon);
+
+
 }
