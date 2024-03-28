@@ -13,4 +13,9 @@ public class Squirtle extends Pockemon{
         super.info();
         System.out.println("Type : Water");
     }
+
+    @Override
+    public void attack() {
+        System.out.println("Water Cannon");
+    }
 }

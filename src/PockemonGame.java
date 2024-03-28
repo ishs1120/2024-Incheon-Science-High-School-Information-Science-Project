@@ -20,6 +20,8 @@ public class PockemonGame {
         s1.setHp(65);
         System.out.println(s1.getName());
         pika1.info();
+        s2.attack();
+        pika1.attack();
 
         //Pockemon p2 = new Pockemon("Squirtle", 70);
 

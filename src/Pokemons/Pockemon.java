@@ -34,4 +34,6 @@ public abstract class  Pockemon{
         System.out.println("Name : " +getName());
         System.out.println("Hp : " + getHp());
     }
+
+    public abstract void attack();
 }
