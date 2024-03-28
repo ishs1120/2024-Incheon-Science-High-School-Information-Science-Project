@@ -17,8 +17,5 @@ public class Charizard extends Pockemon implements Flyable{
 
     }
 
-    @Override
-    public void fly() {
-        System.out.println(this.getName()+" Flying");
-    }
+
 }
