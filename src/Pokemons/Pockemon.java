@@ -7,11 +7,11 @@ public abstract class  Pockemon{
 
 
 
-    public void setFlyable(Flyable flyable) {
+    public void setFly(Flyable flyable) {
         this.flyable = flyable;
     }
 
-    public void performFlyable(){
+    public void performFly(){
         this.flyable.fly();
     }
 

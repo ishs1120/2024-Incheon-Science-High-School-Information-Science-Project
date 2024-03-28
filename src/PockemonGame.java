@@ -1,22 +1,28 @@
-import Pokemons.Charizard;
-import Pokemons.Pikachu;
-import Pokemons.Pockemon;
-import Pokemons.Squirtle;
+import Pokemons.*;
 
 public class PockemonGame {
     public static void main(String[] args) {
 
+        Charizard c1 = new Charizard("Charizard", 250);
+        c1.setFly(new Wings());
+        c1.performFly();
+
 
         Pikachu p1 = new Pikachu("Pikachu", 50);
-        Squirtle s2 = new Squirtle("Squirtle", 70);
-        Charizard c1 = new Charizard("Charizard", 270);
-        c1.fly();
-        p1.info();
-        s2.info();
-        c1.info();
-        s2.attack(p1);
-        p1.attack(s2);
-        c1.attack();
+        p1.setFly(new NoFly());
+        p1.performFly();
+        Rocket rocket = new Rocket();
+        p1.setFly(rocket);
+        p1.performFly();
+//        Squirtle s2 = new Squirtle("Squirtle", 70);
+//        Charizard c1 = new Charizard("Charizard", 270);
+//        c1.fly();
+//        p1.info();
+//        s2.info();
+//        c1.info();
+//        s2.attack(p1);
+//        p1.attack(s2);
+//        c1.attack();
 
 
 
