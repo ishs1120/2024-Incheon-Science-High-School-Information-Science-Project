@@ -2,8 +2,9 @@ import Pokemons.*;
 
 public class PockemonGame {
     public static void main(String[] args) {
+        Wings wings = new Wings();
 
-        Charizard c1 = new Charizard("Charizard", 250, new Wings());
+        Charizard c1 = new Charizard("Charizard", 250, wings);
         c1.setFly(new Wings());
         c1.performFly();
 
