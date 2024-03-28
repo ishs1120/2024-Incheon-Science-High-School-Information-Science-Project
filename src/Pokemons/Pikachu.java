@@ -21,6 +21,6 @@ public class Pikachu extends Pockemon{
 
     @Override
     public void attack(Pockemon targetPokemon) {
-        System.out.println("Attack " + targetPokemon.getName()+ " with Lightning Flash");
+        System.out.println(this.getName()+" attack " + targetPokemon.getName()+ " with Lightning Flash");
     }
 }
