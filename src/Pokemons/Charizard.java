@@ -1,6 +1,6 @@
 package Pokemons;
 
-public class Charizard extends Pockemon{
+public class Charizard extends Pockemon implements Flyable{
 
     public Charizard(String name, int hp) {
         super(name, hp);
@@ -15,5 +15,10 @@ public class Charizard extends Pockemon{
     public void attack(Pockemon targetPokemon) {
         System.out.println(this.getName()+ " attack "+targetPokemon.getName() +" with Uppercase Letters");
 
+    }
+
+    @Override
+    public void fly() {
+        System.out.println(this.getName()+" Flying");
     }
 }

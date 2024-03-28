@@ -10,6 +10,7 @@ public class PockemonGame {
         Pikachu p1 = new Pikachu("Pikachu", 50);
         Squirtle s2 = new Squirtle("Squirtle", 70);
         Charizard c1 = new Charizard("Charizard", 270);
+        c1.fly();
         p1.info();
         s2.info();
         c1.info();
