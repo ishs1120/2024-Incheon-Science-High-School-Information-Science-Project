@@ -8,10 +8,12 @@ public abstract class  Pockemon{
 
 
     public void setFly(Flyable flyable) {
+
         this.flyable = flyable;
     }
 
     public void performFly(){
+        System.out.print(this.getName());
         this.flyable.fly();
     }
 
