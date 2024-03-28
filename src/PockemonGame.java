@@ -1,7 +1,13 @@
+import Pokemons.Pikachu;
 import Pokemons.Pockemon;
 
 public class PockemonGame {
     public static void main(String[] args) {
+        Pikachu pika1 = new Pikachu("Pikachu", 50);
+        Pikachu pika2 = new Pikachu();
+        System.out.println(pika1.getName());
+        System.out.println(pika1.getHp());
+
         Pockemon p2 = new Pockemon("Squirtle", 70);  // parameter constructor
 
         Pockemon p1 = new Pockemon();
