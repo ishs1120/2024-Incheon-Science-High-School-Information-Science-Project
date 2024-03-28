@@ -1,6 +1,6 @@
 package Pokemons;
 
-public class Charizard extends Pockemon implements Flyable{
+public class Charizard extends Pockemon {
 
     public Charizard(String name, int hp) {
         super(name, hp);
