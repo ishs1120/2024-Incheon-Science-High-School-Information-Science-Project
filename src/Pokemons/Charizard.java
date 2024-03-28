@@ -6,6 +6,11 @@ public class Charizard extends Pockemon {
         super(name, hp);
     }
 
+    public Charizard(String name, int hp, Wings wings) {
+        super(name, hp);
+        super.setFly(wings);
+    }
+
     @Override
     public void attack() {
         System.out.println("Wide Area Sirocco");

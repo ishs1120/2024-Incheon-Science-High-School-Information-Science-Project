@@ -3,13 +3,12 @@ import Pokemons.*;
 public class PockemonGame {
     public static void main(String[] args) {
 
-        Charizard c1 = new Charizard("Charizard", 250);
+        Charizard c1 = new Charizard("Charizard", 250, new Wings());
         c1.setFly(new Wings());
         c1.performFly();
 
 
-        Pikachu p1 = new Pikachu("Pikachu", 50);
-        p1.setFly(new NoFly());
+        Pikachu p1 = new Pikachu("Pikachu", 50, new NoFly());
         p1.performFly();
         Rocket rocket = new Rocket();
         p1.setFly(rocket);
