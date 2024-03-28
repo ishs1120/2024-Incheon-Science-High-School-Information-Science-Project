@@ -1,5 +1,6 @@
 import Pokemons.Pikachu;
 import Pokemons.Pockemon;
+import Pokemons.Squirtle;
 
 public class PockemonGame {
     public static void main(String[] args) {
@@ -7,8 +8,16 @@ public class PockemonGame {
         Pikachu pika2 = new Pikachu();
         System.out.println(pika1.getName());
         System.out.println(pika1.getHp());
+        Squirtle s1 = new Squirtle();
+        Squirtle s2 = new Squirtle("Squirtle", 70);
+        System.out.println(s2.getName());
+        System.out.println(s2.getHp());
+        s1.setName("Squirtle");
+        s1.setHp(65);
+        System.out.println(s1.getName());
+        pika1.info();
 
-        Pockemon p2 = new Pockemon("Squirtle", 70);  // parameter constructor
+        Pockemon p2 = new Pockemon("Squirtle", 70);
 
         Pockemon p1 = new Pockemon();
         System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
