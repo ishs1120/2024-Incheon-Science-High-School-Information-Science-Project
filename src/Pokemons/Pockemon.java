@@ -1,11 +1,16 @@
 package Pokemons;
+
+import java.util.List;
+
 public abstract class  Pockemon{
     private String name;
     private int hp;
     protected int attackPoint;
 
-    protected String[] skills;
-    protected Integer[] skillpoints;
+//    protected String[] skills;
+//    protected Integer[] skillpoints;
+    protected List<String> skills;
+    protected List<Integer> skillPoints;
 
     Flyable flyable; // has-a relationship
 
