@@ -10,6 +10,7 @@ public class Charizard extends Pockemon {
         this.attackPoint = 55;
         this.skills = new String[]{"Claw","Dragon's Breath","FlareDrive"};
         this.skillpoints = new Integer[]{10, 20, 60};
+
         System.out.println("Rizarrrrrr");
     }
 

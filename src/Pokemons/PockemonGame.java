@@ -13,7 +13,6 @@ public class PockemonGame {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose your pokemon. 1) Pikachu 2) Squirtle 3) Charizard : ");
         int select = scanner.nextInt();
-
         Pockemon playerPokemon, wildPokemon;
         if(select == 1)
             playerPokemon = new Pikachu("Pikachu", 50);
