@@ -43,6 +43,8 @@ public class Squirtle extends Pockemon{
     public void attack(Pockemon targetPokemon, int s) {
         int originHp = targetPokemon.getHp();
         targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ this.skillPoints.get(s)));
+        if (targetPokemon.getHp() <= 0)
+            targetPokemon.setHp(0);
         System.out.println(this.getName() +" attack " + targetPokemon.getName()+ " with "+this.skills.get(s));
         System.out.println(targetPokemon.getName()+"'s health left : "+targetPokemon.getHp()+"/"+originHp);
     }
