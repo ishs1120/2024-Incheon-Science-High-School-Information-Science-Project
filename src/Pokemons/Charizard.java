@@ -1,6 +1,7 @@
 package Pokemons;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Charizard extends Pockemon {
 
@@ -12,16 +13,8 @@ public class Charizard extends Pockemon {
         this.attackPoint = 55;
 //        this.skills = new String[]{"Claw","Dragon's Breath","FlareDrive"};
 //        this.skillpoints = new Integer[]{10, 20, 60};
-        this.skills = new ArrayList<>();
-        this.skills.add("Claw");
-        this.skills.add("Dragon's Breath");
-        this.skills.add("FlareDrive");
-
-        this.skillPoints = new ArrayList<>();
-        this.skillPoints.add(10);
-        this.skillPoints.add(20);
-        this.skillPoints.add(60);
-
+        this.skills = new ArrayList<>(Arrays.asList("Claw","Dragon's Breath","FlareDrive"));
+        this.skillPoints = new ArrayList<>(Arrays.asList(10,20,60));
         System.out.println("Rizarrrrrr");
     }
 

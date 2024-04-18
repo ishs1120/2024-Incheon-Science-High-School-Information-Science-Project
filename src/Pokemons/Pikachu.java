@@ -17,14 +17,7 @@ public class Pikachu extends Pockemon{
 //        this.skills = new String[]{"Cheeks bulging","Electric Shock","100,000 Volt"};
 //        this.skillpoints = new Integer[]{5, 10, 30};
         this.skills = new ArrayList<>(Arrays.asList("Cheeks bulging", "Electric shock", "100,000 Volts"));
-//        this.skills.add("Cheeks bulging");
-//        this.skills.add("Electric shock");
-//        this.skills.add("100,000 Volts");
-
         this.skillPoints = new ArrayList<>(Arrays.asList(5, 10, 30));
-//        this.skillPoints.add(5);
-//        this.skillPoints.add(10);
-//        this.skillPoints.add(30);
         System.out.println("Pika Pika");
     }
 

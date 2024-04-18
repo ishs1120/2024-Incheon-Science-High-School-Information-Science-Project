@@ -60,9 +60,14 @@ public class PockemonGame {
                 System.out.print("1) "+ playerPokemon.skills.get(0)+" 2) "+playerPokemon.skills.get(1)+" 3) "+playerPokemon.skills.get(2)+" : ");
                 int skill = scanner.nextInt()-1;
                 playerPokemon.attack(wildPokemon, skill);
-                //wildPokemon.attack(playerPokemon, skill);
-                System.out.println("=====================");
-                wildPokemon.attack(playerPokemon, skill);
+                if(wildPokemon.getHp()<=0) {
+                    System.out.println("Wild " + wildPokemon.getName() + " is knock down!");
+                    wildPokemon = null;
+                    produceEnemyPokemon();
+                }else {
+                    System.out.println("=====================");
+                    wildPokemon.attack(playerPokemon, skill);
+                }
             } else if (menu == 2) {
                 System.out.println("Run away");
                 playerPokemon.performFly();
