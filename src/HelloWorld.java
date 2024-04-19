@@ -1,13 +1,21 @@
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.next();
-        System.out.println("Hello "+name+"!");
-        System.out.println("How can I help you?");
-        String question = scanner.next();
-        System.out.println("I can't understand "+question+"!");
-        System.out.println("I think you are idiot "+name+"!");
+        String[] strings = {"Hi", "Hello friends", "Hello friends professor"};
+
+//        Arrays.sort(strings, new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                return o1.length()-o2.length();
+//            }
+//
+//        });
+
+        for (String s : strings){
+            System.out.println(s);
+        }
     }
 }

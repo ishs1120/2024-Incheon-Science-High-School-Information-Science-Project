@@ -7,6 +7,8 @@ public abstract class  Pockemon{
     private int hp;
     protected int attackPoint;
 
+    protected int speed;
+
 //    protected String[] skills;
 //    protected Integer[] skillpoints;
     protected List<String> skills;

@@ -11,8 +11,7 @@ public class Charizard extends Pockemon {
         super(name, hp);
         super.setFly(new Wings());
         this.attackPoint = 55;
-//        this.skills = new String[]{"Claw","Dragon's Breath","FlareDrive"};
-//        this.skillpoints = new Integer[]{10, 20, 60};
+        this.speed = 100;
         this.skills = new ArrayList<>(Arrays.asList("Claw","Dragon's Breath","FlareDrive"));
         this.skillPoints = new ArrayList<>(Arrays.asList(10,20,60));
         System.out.println("Rizarrrrrr");

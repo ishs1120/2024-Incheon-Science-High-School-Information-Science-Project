@@ -12,8 +12,7 @@ public class Squirtle extends Pockemon{
         super(name, hp);
         super.setFly(new NoFly());
         this.attackPoint = 10;
-//        this.skills = new String[]{"Body Slam","Water Cannon","Hydropump"};
-//        this.skillpoints = new Integer[]{5, 10, 30};
+        this.speed = 43;
         this.skills = new ArrayList<>(Arrays.asList("Body Slam","Water Cannon","Hydropump"));
         this.skillPoints = new ArrayList<>(Arrays.asList(5,10,30));
 
