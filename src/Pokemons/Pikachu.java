@@ -2,8 +2,9 @@ package Pokemons;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
-public class Pikachu extends Pockemon{
+public class Pikachu extends Pokemon {
     public Pikachu() {
         System.out.println("Pika Pika");
     }
@@ -15,8 +16,9 @@ public class Pikachu extends Pockemon{
         super.setFly(new NoFly());
         this.attackPoint = 15;
         this.speed = 90;
-        this.skills = new ArrayList<>(Arrays.asList("Cheeks bulging", "Electric shock", "100,000 Volts"));
-        this.skillPoints = new ArrayList<>(Arrays.asList(5, 10, 30));
+//        this.skills = new ArrayList<>(Arrays.asList("Cheeks bulging", "Electric shock", "100,000 Volts"));
+//        this.skillPoints = new ArrayList<>(Arrays.asList(5, 10, 30));
+        Map<String,Integer>skill = Map.of("Cheeks bulging", 5, "Electric shock", 10,"100,000 Volts",30);
         System.out.println("Pika Pika");
     }
 
@@ -32,7 +34,7 @@ public class Pikachu extends Pockemon{
     }
 
     @Override
-    public void attack(Pockemon targetPokemon, int s) {
+    public void attack(Pokemon targetPokemon, int s) {
         int originHp = targetPokemon.getHp();
         targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ this.skillPoints.get(s)));
         if (targetPokemon.getHp() <= 0)

@@ -1,8 +1,10 @@
 package Pokemons;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public abstract class  Pockemon{
+public abstract class Pokemon {
     private String name;
     private int hp;
     protected int attackPoint;
@@ -11,8 +13,9 @@ public abstract class  Pockemon{
 
 //    protected String[] skills;
 //    protected Integer[] skillpoints;
-    protected List<String> skills;
-    protected List<Integer> skillPoints;
+//    protected List<String> skills;
+//    protected List<Integer> skillPoints;
+    Map<String, Integer> skills = new HashMap<>();
 
     Flyable flyable; // has-a relationship
 
@@ -27,12 +30,12 @@ public abstract class  Pockemon{
         this.flyable.fly();
     }
 
-    public Pockemon() {
+    public Pokemon() {
         this.name = "nameless";
         this.hp = 10;
 //        System.out.println("default constructor");
     }
-    public Pockemon(String name, int hp) {
+    public Pokemon(String name, int hp) {
         this.name = name;
         this.hp = hp;
 //        System.out.println("parameter construction");
@@ -60,7 +63,7 @@ public abstract class  Pockemon{
     }
 
     public abstract void attack();
-    public abstract void attack(Pockemon targetPokemon, int skill);
+    public abstract void attack(Pokemon targetPokemon, int skill);
 
 
 }

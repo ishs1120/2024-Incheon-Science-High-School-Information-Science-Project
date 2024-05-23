@@ -1,13 +1,11 @@
 package Pokemons;
 
-import Pokemons.*;
-
 import java.util.Random;
 import java.util.Scanner;
 
-public class PockemonGame {
+public class PokemonGame {
 
-    static Pockemon wildPokemon;
+    static Pokemon wildPokemon;
 
     public static void produceEnemyPokemon() {
         Random random = new Random();
@@ -32,7 +30,7 @@ public class PockemonGame {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose your pokemon. 1) Pikachu 2) Squirtle 3) Charizard : ");
         int select = scanner.nextInt();
-        Pockemon playerPokemon;
+        Pokemon playerPokemon;
         if (select == 1)
             playerPokemon = new Pikachu("Pikachu", 50);
         else if (select == 2) {
@@ -63,6 +61,11 @@ public class PockemonGame {
                     } else {
                         System.out.println("=====================");
                         wildPokemon.attack(playerPokemon, skill);
+                        if (playerPokemon.getHp() <= 0) {
+                            System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
+                            playerPokemon = null;
+                            break;
+                        }
                     }
                 } else if (playerPokemon.speed == wildPokemon.speed) {
                     Random random1 = new Random();
@@ -78,6 +81,11 @@ public class PockemonGame {
                         } else {
                             System.out.println("=====================");
                             wildPokemon.attack(playerPokemon, skill);
+                            if (playerPokemon.getHp() <= 0) {
+                                System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
+                                playerPokemon = null;
+                                break;
+                            }
                         }
                     } else {
                         System.out.print("1) " + playerPokemon.skills.get(0) + " 2) " + playerPokemon.skills.get(1) + " 3) " + playerPokemon.skills.get(2) + " : ");
@@ -90,6 +98,11 @@ public class PockemonGame {
                         } else {
                             System.out.println("=====================");
                             playerPokemon.attack(wildPokemon, skill);
+                            if (wildPokemon.getHp() <= 0) {
+                                System.out.println("Wild " + wildPokemon.getName() + " is knock down!");
+                                wildPokemon = null;
+                                produceEnemyPokemon();
+                            }
                         }
                     }
 
@@ -104,6 +117,11 @@ public class PockemonGame {
                     } else {
                         System.out.println("=====================");
                         playerPokemon.attack(wildPokemon, skill);
+                        if (wildPokemon.getHp() <= 0) {
+                            System.out.println("Wild " + wildPokemon.getName() + " is knock down!");
+                            wildPokemon = null;
+                            produceEnemyPokemon();
+                        }
                     }
 
 

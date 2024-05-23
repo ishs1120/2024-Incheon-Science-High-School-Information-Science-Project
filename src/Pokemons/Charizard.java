@@ -3,7 +3,7 @@ package Pokemons;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Charizard extends Pockemon {
+public class Charizard extends Pokemon {
 
 
 
@@ -27,7 +27,7 @@ public class Charizard extends Pockemon {
     }
 
     @Override
-    public void attack(Pockemon targetPokemon, int s) {
+    public void attack(Pokemon targetPokemon, int s) {
         int originHp = targetPokemon.getHp();
         targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ this.skillPoints.get(s)));
         if (targetPokemon.getHp() <= 0)
