@@ -46,8 +46,7 @@ public class Pikachu extends Pokemon {
     @Override
     public void attack(Pokemon targetPokemon, int s) {
         int originHp = targetPokemon.getHp();
-        for(String idx : skills.keySet())
-            targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ skills.get(idx)));
+        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ this.skillpoints.get(this.skills.get(s))));
         if (targetPokemon.getHp() <= 0)
             targetPokemon.setHp(0);
         System.out.println(this.getName()+" attack " + targetPokemon.getName()+ " with "+this.skills.get(s));

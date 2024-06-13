@@ -68,4 +68,5 @@ public abstract class Pokemon {
     public abstract void attack(Pokemon targetPokemon, int skill);
 
 
+    public Map<Integer, String> getSkills() { return skills;}
 }
