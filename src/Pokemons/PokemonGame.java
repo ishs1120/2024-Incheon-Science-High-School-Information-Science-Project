@@ -75,7 +75,7 @@ public class PokemonGame {
                     Random random1 = new Random();
                     int firstattack = random1.nextInt(2);
                     if (firstattack == 1) {
-                        System.out.print("1) " + playerPokemon.skills.get(1) + " 2) " + playerPokemon.skills.get(2) + " 3) " + playerPokemon.skills.get(3) + " : ");
+                        playerPokemon.getSkills().forEach((k, v) -> System.out.println(k + ")" + v));
                         int skill = scanner.nextInt();
                         playerPokemon.attack(wildPokemon, skill);
                         if (wildPokemon.getHp() <= 0) {
@@ -92,7 +92,7 @@ public class PokemonGame {
                             }
                         }
                     } else {
-                        System.out.print("1) " + playerPokemon.skills.get(1) + " 2) " + playerPokemon.skills.get(2) + " 3) " + playerPokemon.skills.get(3) + " : ");
+                        playerPokemon.getSkills().forEach((k, v) -> System.out.println(k + ")" + v));
                         int skill = scanner.nextInt();
                         wildPokemon.attack(playerPokemon, skill);
                         if (playerPokemon.getHp() <= 0) {
@@ -111,7 +111,7 @@ public class PokemonGame {
                     }
 
                 } else {
-                    System.out.print("1) " + playerPokemon.skills.get(1) + " 2) " + playerPokemon.skills.get(2) + " 3) " + playerPokemon.skills.get(3) + " : ");
+                    playerPokemon.getSkills().forEach((k, v) -> System.out.println(k + ")" + v));
                     int skill = scanner.nextInt();
                     wildPokemon.attack(playerPokemon, skill);
                     if (playerPokemon.getHp() <= 0) {
