@@ -1,9 +1,6 @@
 package Pokemons;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class Squirtle extends Pokemon {
     public Squirtle() {
@@ -17,7 +14,15 @@ public class Squirtle extends Pokemon {
         this.speed = 43;
 //        this.skills = new ArrayList<>(Arrays.asList("Body Slam","Water Cannon","Hydropump"));
 //        this.skillPoints = new ArrayList<>(Arrays.asList(5,10,30));
-        Map<String, Integer> skill = Map.of("Body Slam", 5, "Water Cannon", 10, "HydroPump", 30);
+        this.skills = new HashMap<>();
+        skills.put(1, "Body Slam");
+        skills.put(2, "Water Cannon");
+        skills.put(3, "Hydropump");
+
+        this.skillpoints =new HashMap<>();
+        skillpoints.put("Body Slam", 5);
+        skillpoints.put("Water Cannon", 10);
+        skillpoints.put("Hydropump", 30);
 
 
         System.out.println("Crrrrrrr");
@@ -38,10 +43,10 @@ public class Squirtle extends Pokemon {
     public void attack(Pokemon targetPokemon, int s) {
         int originHp = targetPokemon.getHp();
         for(String idx : skills.keySet())
-           targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ skills.get(idx)));
+            targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ skills.get(idx)));
         if (targetPokemon.getHp() <= 0)
             targetPokemon.setHp(0);
-        System.out.println(this.getName() +" attack " + targetPokemon.getName()+ " with "+this.skills.get(s));
+        System.out.println(this.getName() +" attack " + targetPokemon.getName()+ " with "+ this.skills.get(s));
         System.out.println(targetPokemon.getName()+"'s health left : "+targetPokemon.getHp()+"/"+originHp);
     }
 

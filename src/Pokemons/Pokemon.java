@@ -15,7 +15,9 @@ public abstract class Pokemon {
 //    protected Integer[] skillpoints;
 //    protected List<String> skills;
 //    protected List<Integer> skillPoints;
-    Map<String, Integer> skills = new HashMap<>();
+    Map<Integer, String> skills = new HashMap<>();
+
+    Map<String, Integer> skillpoints = new HashMap<>();
 
     Flyable flyable; // has-a relationship
 

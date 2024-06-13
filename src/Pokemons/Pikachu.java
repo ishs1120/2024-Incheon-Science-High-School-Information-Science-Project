@@ -2,6 +2,7 @@ package Pokemons;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Pikachu extends Pokemon {
@@ -18,7 +19,16 @@ public class Pikachu extends Pokemon {
         this.speed = 90;
 //        this.skills = new ArrayList<>(Arrays.asList("Cheeks bulging", "Electric shock", "100,000 Volts"));
 //        this.skillPoints = new ArrayList<>(Arrays.asList(5, 10, 30));
-        Map<String,Integer>skill = Map.of("Cheeks bulging", 5, "Electric shock", 10,"100,000 Volts",30);
+        this.skills = new HashMap<>();
+        skills.put(1, "Cheeks bulging");
+        skills.put(2, "Electric shock");
+        skills.put(3, "100,000 Volts");
+
+        this.skillpoints =new HashMap<>();
+        skillpoints.put("Cheeks bulging", 5);
+        skillpoints.put("Electric shock", 10);
+        skillpoints.put("100,000 Volts", 30);
+
         System.out.println("Pika Pika");
     }
 
@@ -36,7 +46,8 @@ public class Pikachu extends Pokemon {
     @Override
     public void attack(Pokemon targetPokemon, int s) {
         int originHp = targetPokemon.getHp();
-        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ this.skillPoints.get(s)));
+        for(String idx : skills.keySet())
+            targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ skills.get(idx)));
         if (targetPokemon.getHp() <= 0)
             targetPokemon.setHp(0);
         System.out.println(this.getName()+" attack " + targetPokemon.getName()+ " with "+this.skills.get(s));
