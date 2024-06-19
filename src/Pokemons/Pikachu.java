@@ -1,9 +1,6 @@
 package Pokemons;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Pikachu extends Pokemon {
     public Pikachu() {
@@ -13,7 +10,7 @@ public class Pikachu extends Pokemon {
 
 
     public Pikachu(String name, int hp) {
-        super(name, hp);
+        super(name, hp, new HashSet<>(Set.of(PokemonType.Electric)));
         super.setFly(new NoFly());
         this.attackPoint = 15;
         this.speed = 90;
@@ -28,6 +25,11 @@ public class Pikachu extends Pokemon {
         skillpoints.put("Cheeks bulging", 5);
         skillpoints.put("Electric shock", 10);
         skillpoints.put("100,000 Volts", 30);
+
+        this.skilltype = new HashMap<>();
+        skilltype.put("Cheeks bulging", PokemonType.Electric);
+        skilltype.put("Electric shock", PokemonType.Electric);
+        skilltype.put("100,000 Volts", PokemonType.Electric);
 
         System.out.println("Pika Pika");
     }
@@ -45,13 +47,31 @@ public class Pikachu extends Pokemon {
 
     @Override
     public void attack(Pokemon targetPokemon, int s) {
-        int originHp = targetPokemon.getHp();
-        targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint/10+ this.skillpoints.get(this.skills.get(s))));
-        if (targetPokemon.getHp() <= 0)
-            targetPokemon.setHp(0);
-        System.out.println(this.getName()+" attack " + targetPokemon.getName()+ " with "+this.skills.get(s));
-        System.out.println(targetPokemon.getName()+"'s health left : "+targetPokemon.getHp()+"/"+originHp);
+        String skill = this.skills.get(s);
+        PokemonType skillType = this.skilltype.get(skill);
 
+        double effectiveness = 1.0;
+        for (PokemonType defenderType : targetPokemon.getTypes()) {
+            effectiveness *= TypeEffectiveness.getEffectiveness(skillType, defenderType);
+        }
+
+        int damage = (int)((this.attackPoint / 10 + this.skillpoints.get(skill)) * effectiveness);
+        targetPokemon.setHp(targetPokemon.getHp() - damage);
+        if (targetPokemon.getHp() <= 0) {
+            targetPokemon.setHp(0);
+        }
+
+        System.out.println(this.getName() + " attacks " + targetPokemon.getName() + " with " + skill);
+        if(effectiveness >=2.0){
+            System.out.println("Skill was very effective!");
+        } else if (effectiveness==1.0) {
+            System.out.print("");
+        } else if (effectiveness>0) {
+            System.out.println("Skill was not very effective...");
+        } else {
+            System.out.println("Skill was not effective...");
+        }
+        System.out.println(targetPokemon.getName() + "'s health left: " + targetPokemon.getHp() + "/" + targetPokemon.getOriginalHp());
     }
 
 
