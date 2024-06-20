@@ -76,7 +76,7 @@ public class PokemonGame {
                         produceEnemyPokemon();
                     } else {
                         System.out.println("=====================");
-                        wildPokemon.attack(playerPokemon, random.nextInt(2)+1);
+                        wildPokemon.attack(playerPokemon, random.nextInt(3)+1);
                         if (playerPokemon.getHp() <= 0) {
                             System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
                             playerPokemon = null;
@@ -96,7 +96,7 @@ public class PokemonGame {
                             produceEnemyPokemon();
                         } else {
                             System.out.println("=====================");
-                            wildPokemon.attack(playerPokemon, random.nextInt(2)+1);
+                            wildPokemon.attack(playerPokemon, random.nextInt(3)+1);
                             if (playerPokemon.getHp() <= 0) {
                                 System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
                                 playerPokemon = null;
@@ -106,7 +106,7 @@ public class PokemonGame {
                     } else {
                         playerPokemon.getSkills().forEach((k, v) -> System.out.println(k + ")" + v));
                         int skill = scanner.nextInt();
-                        wildPokemon.attack(playerPokemon, random.nextInt(2)+1);
+                        wildPokemon.attack(playerPokemon, random.nextInt(3)+1);
                         if (playerPokemon.getHp() <= 0) {
                             System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
                             playerPokemon = null;
@@ -125,7 +125,7 @@ public class PokemonGame {
                 } else {
                     playerPokemon.getSkills().forEach((k, v) -> System.out.println(k + ")" + v));
                     int skill = scanner.nextInt();
-                    wildPokemon.attack(playerPokemon, random.nextInt(2)+1);
+                    wildPokemon.attack(playerPokemon, random.nextInt(3)+1);
                     if (playerPokemon.getHp() <= 0) {
                         System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
                         playerPokemon = null;
