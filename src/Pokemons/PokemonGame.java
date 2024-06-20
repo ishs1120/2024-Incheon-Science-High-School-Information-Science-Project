@@ -12,15 +12,20 @@ public class PokemonGame {
         Random random = new Random();
 
 
-        int select = random.nextInt(3);
-        if (select == 0)
-            wildPokemon = new Pikachu("Pikachu", 50);
-        else if (select == 1)
-            wildPokemon = new Squirtle("Squirtle", 55);
-        else if (select == 2)
-            wildPokemon = new Charizard("Charizard", 74);
-        else
-            wildPokemon = new Pikachu("Pikachu", 50);
+//        if (select == 0)
+//            wildPokemon = new Pikachu("Pikachu", 50);
+//        else if (select == 1)
+//            wildPokemon = new Squirtle("Squirtle", 55);
+//        else if (select == 2)
+//            wildPokemon = new Charizard("Charizard", 74);
+//        else
+//            wildPokemon = new Pikachu("Pikachu", 50);
+        wildPokemon = switch (random.nextInt()){
+            case 0-> new Pikachu("Pikchu", 50);
+            case 1-> new Squirtle("Squirtle", 65);
+            case 2-> new Charizard("Charizard", 120);
+            default -> new Pikachu("Pikchu", 50);
+        };
         System.out.println("A wild " + wildPokemon.getName() + " has appeared");
     }
 
@@ -31,15 +36,22 @@ public class PokemonGame {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose your pokemon. 1) Pikachu 2) Squirtle 3) Charizard : ");
         int select = scanner.nextInt();
-        Pokemon playerPokemon;
-        if (select == 1)
-            playerPokemon = new Pikachu("Pikachu", 50);
-        else if (select == 2) {
-            playerPokemon = new Squirtle("Squirtle", 65);
-        } else if (select == 3) {
-            playerPokemon = new Charizard("Charizard", 180);
-        } else
-            playerPokemon = new Pikachu("Pikachu", 50);
+//        Pokemon playerPokemon;
+//        if (select == 1)
+//            playerPokemon = new Pikachu("Pikachu", 50);
+//        else if (select == 2) {
+//            playerPokemon = new Squirtle("Squirtle", 65);
+//        } else if (select == 3) {
+//            playerPokemon = new Charizard("Charizard", 180);
+//        } else
+//            playerPokemon = new Pikachu("Pikachu", 50);
+
+        Pokemon playerPokemon = switch (select){
+            case 1 -> new Pikachu("Pikchu", 50);
+            case 2-> new Squirtle("Squirtle", 65);
+            case 3 -> new Charizard("Charizard", 180);
+            default -> new Pikachu("Pikchu", 50);
+        };
 
         System.out.println("You meet wild Pokemon");
         produceEnemyPokemon();
@@ -64,7 +76,7 @@ public class PokemonGame {
                         produceEnemyPokemon();
                     } else {
                         System.out.println("=====================");
-                        wildPokemon.attack(playerPokemon, skill);
+                        wildPokemon.attack(playerPokemon, random.nextInt(2)+1);
                         if (playerPokemon.getHp() <= 0) {
                             System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
                             playerPokemon = null;
@@ -84,7 +96,7 @@ public class PokemonGame {
                             produceEnemyPokemon();
                         } else {
                             System.out.println("=====================");
-                            wildPokemon.attack(playerPokemon, skill);
+                            wildPokemon.attack(playerPokemon, random.nextInt(2)+1);
                             if (playerPokemon.getHp() <= 0) {
                                 System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
                                 playerPokemon = null;
@@ -94,7 +106,7 @@ public class PokemonGame {
                     } else {
                         playerPokemon.getSkills().forEach((k, v) -> System.out.println(k + ")" + v));
                         int skill = scanner.nextInt();
-                        wildPokemon.attack(playerPokemon, skill);
+                        wildPokemon.attack(playerPokemon, random.nextInt(2)+1);
                         if (playerPokemon.getHp() <= 0) {
                             System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
                             playerPokemon = null;
@@ -113,7 +125,7 @@ public class PokemonGame {
                 } else {
                     playerPokemon.getSkills().forEach((k, v) -> System.out.println(k + ")" + v));
                     int skill = scanner.nextInt();
-                    wildPokemon.attack(playerPokemon, skill);
+                    wildPokemon.attack(playerPokemon, random.nextInt(2)+1);
                     if (playerPokemon.getHp() <= 0) {
                         System.out.println("Player's " + playerPokemon.getName() + " is knock down!");
                         playerPokemon = null;
